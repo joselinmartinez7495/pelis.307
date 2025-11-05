@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Películas Romance{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{{ url_for('static', filename='romance/style.css') }}">{% endblock %}
+{% block content %}
+<h1>Películas Romance</h1>
+<p>Bienvenido a la sección romance. Aquí puedes añadir información, reseñas o texto libremente.</p>
+<div class="poster-grid">
+  <img src="{{ url_for('static', filename='romance/poster1.jpg') }}" alt="Póster 1">
+  <p>Orgullo y Prejuicio: Elizabeth Bennet se enfrenta al arrogante Sr. Darcy en la Inglaterra del siglo XIX.</p>
+  <img src="{{ url_for('static', filename='romance/poster2.jpg') }}" alt="Póster 2">
+  <p>La La Land: Un pianista de jazz y una aspirante a actriz persiguen sus sueños en Los Ángeles.</p>
+</div>
+{% endblock %}

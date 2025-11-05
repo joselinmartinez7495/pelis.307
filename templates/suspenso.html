@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Películas Suspenso{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{{ url_for('static', filename='suspenso/style.css') }}">{% endblock %}
+{% block content %}
+<h1>Películas Suspenso</h1>
+<p>Bienvenido a la sección suspenso. Aquí puedes añadir información, reseñas o texto libremente.</p>
+<div class="poster-grid">
+  <img src="{{ url_for('static', filename='suspenso/poster1.jpg') }}" alt="Póster 1">
+  <p>El Silencio de los Inocentes: Una joven agente del FBI busca la ayuda de un asesino encarcelado para atrapar a otro.</p>
+  <img src="{{ url_for('static', filename='suspenso/poster2.jpg') }}" alt="Póster 2">
+  <p>Perdida: Un hombre se convierte en el principal sospechoso cuando su esposa desaparece.</p>
+</div>
+{% endblock %}

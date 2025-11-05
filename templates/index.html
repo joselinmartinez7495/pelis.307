@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<style>
+/* Centrar todo el contenido */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilos para el select del menú */
+select#categoria {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cfe8ff;
+  background: linear-gradient(180deg, #fff, #f7fbff);
+  color: var(--texto);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.15s ease, transform 0.08s ease;
+}
+
+/* Efecto de foco en el select */
+select#categoria:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.links {
+  margin-top: 1rem;
+}
+</style>
+
+<main>
+  <h1>🎬 Bienvenido a PeliTAER</h1>
+  <p>Explora nuestras secciones de películas:</p>
+
+  <label for="categoria">Categoría:</label>
+  <select id="categoria" name="categoria" aria-label="Seleccionar categoría">
+    <option value="">Elige una categoría</option>
+    <option value="/categoria/suspenso">Suspenso</option>
+    <option value="/categoria/terror">Terror</option>
+    <option value="/categoria/romance">Romance</option>
+    <option value="/categoria/infantil">Infantil</option>
+  </select>
+
+  <!-- Enlaces alternativos si no hay JavaScript -->
+  <div class="links">
+    <noscript>
+      <p>Si JavaScript está desactivado, usa los enlaces:</p>
+      <ul>
+        <li><a href="/categoria/suspenso">Suspenso</a></li>
+        <li><a href="/categoria/terror">Terror</a></li>
+        <li><a href="/categoria/romance">Romance</a></li>
+        <li><a href="/categoria/infantil">Infantil</a></li>
+      </ul>
+    </noscript>
+  </div>
+    <h3>Por:</h3>
+    <h4>Leonardo Guillén Guzmán</h4>
+    <h4>Josmar Santiago de la Luz</h4>
+    <h4>Joselin Betzabel Martínez Martínez</h4>
+    <h4>Angel Adrián Morales López</h4>
+    <h4>Melani Joanna Hernández Conde</h4>
+    <h4>Guadalupe Poleth Rojas Correas</h4>
+    <h4>Erick Armando González Solis</h4>
+    <h3>Grupo 307 Emplea Frameworks para el Desarrollo de Software</h3>
+</main>
+
+<script>
+document.getElementById('categoria').addEventListener('change', function() {
+  if (this.value) {
+    window.location.href = this.value;
+  }
+});
+</script>
+{% endblock %}

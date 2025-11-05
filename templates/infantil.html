@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Películas Infantil{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{{ url_for('static', filename='infantil/style.css') }}">{% endblock %}
+{% block content %}
+<h1>Películas Infantil</h1>
+<p>Bienvenido a la sección infantil. Aquí puedes añadir información, reseñas o texto libremente.</p>
+<div class="poster-grid">
+  <img src="{{ url_for('static', filename='infantil/poster1.jpg') }}" alt="Póster 1">
+  <p>Toy Story: Un grupo de juguetes cobra vida cuando su dueño no está, y un juguete nuevo cambiara el rumbo.</p>
+  <img src="{{ url_for('static', filename='infantil/poster2.jpg') }}" alt="Póster 2">
+  <p>Mi Vecino Totoro: Dos hermanas se mudan al campo y se hacen amigas de un espíritu del bosque.</p>
+</div>
+{% endblock %}
